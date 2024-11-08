@@ -38,8 +38,10 @@ def RandomInt(min_number: int, max_number: int) -> int:
         random_number=random.randint(min_number, max_number) # randomizing between 2 given integer numbers
     except TypeError:
         print('numbers should be int')
+        random_number=0
     except ValueError:
         print('numbers should have a bound in between')
+        random_number=0
    
     
     return random_number
@@ -112,7 +114,7 @@ def math_quiz():
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for _ in range(total_loops):
-        first_number = RandomInt(10, 13); second_number = RandomInt(1, 5.5); sign = RandomSign()
+        first_number = RandomInt(10, 13); second_number = RandomInt(1, 5); sign = RandomSign()
 
         PROBLEM, ANSWER = CreatedEquation(first_number, second_number, sign) # creating an equation from the random numbers and the mathmatical sign 
         print(f"\nQuestion: {PROBLEM}") # prints the problem to the user
