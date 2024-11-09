@@ -9,7 +9,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'math_quiz=math_quiz.math_quiz:math_quiz',   # Allows running `math_quiz` from the command line
+            'math_quiz=math_quiz:math_quiz',   # Allows running `math_quiz` from the command line
         ],
     },
     description='A simple math quiz application',  # Brief description
