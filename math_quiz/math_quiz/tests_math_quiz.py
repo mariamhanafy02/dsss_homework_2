@@ -1,7 +1,12 @@
 import unittest
 from math_quiz import RandomInteger, RandomSign, EquationFormula
 
-
+def check_sign(rand_sign):
+    if rand_sign == '+' or '-' or '*':
+        return True 
+    else:
+        return False
+    
 class TestMathGame(unittest.TestCase):
 
     def test_RandomInteger(self):
@@ -13,18 +18,25 @@ class TestMathGame(unittest.TestCase):
             self.assertTrue(min_val <= rand_num <= max_val)
 
     def test_RandomSign(self):
-        # TODO
-        pass
+         rand_sign = RandomSign()
+         output=check_sign(rand_sign)
+         self.assertTrue(output)
 
     def test_EquationFormula(self):
             test_cases = [
                 (5, 2, '+', '5 + 2', 7),
-                ''' TODO add more test cases here '''
+                (10, 12, '+', '10 + 12', 22),
+                (5, 2, '-', '5 - 2', 3),
+                (-2, 2, '+', '-2 + 2', 0),
+                (3, 3, '*', '3 * 3', 9),
+                (5, -9, '+', '5 + -9', -4),
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
-                # TODO
-                pass
+                 problem, answer=EquationFormula(num1,num2,operator)
+                 self.assertEqual(problem, expected_problem)
+                 self.assertEqual(answer, expected_answer)
+                
 
 if __name__ == "__main__":
     unittest.main()
